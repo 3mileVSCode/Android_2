@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Annexe_1">
         <activity
-            android:name=".MainActivity3"
+            android:name=".AfficherActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".AjouterActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -21,21 +21,21 @@
         android:layout_weight="2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/ajouter"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="Ajouter un mémo" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/afficher"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="Afficher les mémos" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/quitter"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
