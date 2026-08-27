@@ -40,7 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         // interface fonctionnelle : interface qui n'a qu'une méthode
         // une interface fonctionnelle peut être remplacé par une expression lambda (arrow function)
-        // 
+
+        // boutonQuitter.setOnClickListener { v -> finish() }
+        boutonQuitter.setOnClickListener { finish() }
+        // pourquoi il n'y a plus de parenthèses, à cause de la règle du "lambda trailing"
 
     }
 
