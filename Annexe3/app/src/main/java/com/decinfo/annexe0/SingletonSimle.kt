@@ -30,7 +30,7 @@ object SingletonSimle {
     }
 
     // recuperer la liste du fichier de la serialisation et retourner une copie de la liste
-    fun deserializerListe(context: Context) : ArrayList<Memo> {
+    fun deserializerListe(context: Context)  {
         if (listMemo.isEmpty()) { // pour rviter d'utiliser le fichier de serialisation sans en aboir vraiment besoin
             val fis: FileInputStream = context.openFileInput("fichier.ser")
             val ois = ObjectInputStream(fis)
@@ -38,6 +38,5 @@ object SingletonSimle {
                 listMemo = ois.readObject() as ArrayList<Memo>
             }
         }
-        return ArrayList(listMemo)
     }
 }
