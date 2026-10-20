@@ -1,5 +1,5 @@
 package com.decinfo.tp1
 
-class KlaxonActicity {
+class ListeChanson {
 
 }

@@ -35,17 +35,5 @@ class MainActivity : AppCompatActivity() {
         player?.addMediaItem(mediaItem)
         player?.prepare()
         player?.play()
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
