@@ -1,12 +1,21 @@
 package com.decinfo.tp1
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var rainbows: Button
+    lateinit var computer: Button
+    lateinit var kid: Button
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -15,6 +24,26 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        rainbows    = findViewById(R.id.rainbows)
+        computer    = findViewById(R.id.computer)
+        kid         = findViewById(R.id.kid)
+
+        val ec = Ecouteur()
+
+        rainbows.setOnClickListener(ec)
+        computer.setOnClickListener(ec)
+        kid.setOnClickListener(ec)
+
+    }
+
+    inner class Ecouteur : View.OnClickListener {
+        override fun onClick(v: View?) {
+            if (v == rainbows || v == computer || v == kid){
+                val i = Intent(this@MainActivity, AfficherChansons::class.java)
+                startActivity(i)
+            }
         }
     }
 }

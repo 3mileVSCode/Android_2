@@ -8,11 +8,11 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/radiohead"
+        android:id="@+id/rainbows"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#DE0505"
-        android:text="Radiohead"
+        android:text="In Rainbows"
         android:textColorLink="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +22,11 @@
         app:layout_constraintVertical_bias="0.212" />
 
     <Button
-        android:id="@+id/macmiller"
+        android:id="@+id/computer"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#B53F5C"
-        android:text="Mac Miller"
+        android:backgroundTint="#63A5AF"
+        android:text="OK Computer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -35,11 +35,11 @@
         app:layout_constraintVertical_bias="0.446" />
 
     <Button
-        android:id="@+id/josman"
+        android:id="@+id/kid"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#7E3636"
-        android:text="Josman"
+        android:text="Kid A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
