@@ -14,13 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Atelier1">
         <activity
-            android:name=".SimpleAdapterActivity"
-            android:exported="false" />
+
+            android:name=".KlaxonActivity"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".KlaxonActivity"
+            android:name=".SimpleAdapterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

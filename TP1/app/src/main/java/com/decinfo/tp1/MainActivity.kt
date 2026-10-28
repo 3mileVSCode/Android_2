@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var rainbows: Button
     lateinit var computer: Button
     lateinit var kid: Button
+    var albumName: String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,10 +41,25 @@ class MainActivity : AppCompatActivity() {
 
     inner class Ecouteur : View.OnClickListener {
         override fun onClick(v: View?) {
-            if (v == rainbows || v == computer || v == kid){
+            if (v == rainbows){
+                albumName = "In Rainbows"
+                val i = Intent(this@MainActivity, AfficherChansons::class.java)
+                startActivity(i)
+            } else if (v == computer){
+                albumName = "OK Computer"
+                val i = Intent(this@MainActivity, AfficherChansons::class.java)
+                startActivity(i)
+            } else if (v == kid){
+                albumName = "Kid A"
                 val i = Intent(this@MainActivity, AfficherChansons::class.java)
                 startActivity(i)
             }
         }
     }
+
+    fun getAlbumName():String{
+        return albumName
+    }
 }
+
+

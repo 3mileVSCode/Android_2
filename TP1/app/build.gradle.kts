@@ -37,7 +37,8 @@ android {
 
 dependencies {
     implementation("com.beust:klaxon:5.5")
-    implementation("com.anddroid.volley:volley:1.2.1")
+    implementation ("androidx.media3:media3-exoplayer:1.11.1")
+    implementation("com.android.volley:volley:1.2.1")
     implementation ("androidx.media3:media3-exoplayer:1.11.1")
     implementation ("androidx.media3:media3-ui:1.11.1")
     implementation ("androidx.media3:media3-common:1.11.1")
