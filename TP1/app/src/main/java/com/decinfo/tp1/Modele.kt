@@ -9,20 +9,39 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.beust.klaxon.Klaxon
 
-class Modele {
-    fun getListeChansons (c: Context) {
+object Modele : Sujet {
+    val observateurs = ArrayList<Observateur>()
+    var listeChansons = ListeChansons()
 
+    fun chargerChansons(c: Context , albumID : Int) {
         val queue = Volley.newRequestQueue(c)
-        val url = "https://itunes.apple.com/lookup?id=1109714933&entity=song"
+        val url = "https://itunes.apple.com/lookup?id=$albumID&entity=song"
 
         val stringRequest = StringRequest(
             Request.Method.GET,
             url,
-            {reponse -> val li: ListeChansons = Klaxon().parse<ListeChansons>(reponse) ?: ListeChansons() },
-            {Toast.makeText(c, "ne fonctionne pas", LENGTH_LONG)})
+            { reponse ->
+                listeChansons = Klaxon().parse<ListeChansons>(reponse) ?: ListeChansons()
+                avertirObservateur()
+            },
+            {
+                println("Erreur chargerChansons : ne fonctionne pas")
+            }
+        )
         queue.add(stringRequest)
     }
 
+    override fun ajouterObservateur(o: Observateur) {
+        observateurs.add(o)
+    }
 
+    override fun retirerObservateur(o: Observateur) {
+        observateurs.remove(o)
+    }
 
+    override fun avertirObservateur() {
+        for (o in observateurs) {
+            o.actualiser()
+        }
+    }
 }

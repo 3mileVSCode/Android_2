@@ -11,10 +11,13 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
+
+
     lateinit var rainbows: Button
     lateinit var computer: Button
     lateinit var kid: Button
-    var albumName: String = ""
+    var collectionName: String = ""
+    var id = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,24 +44,20 @@ class MainActivity : AppCompatActivity() {
 
     inner class Ecouteur : View.OnClickListener {
         override fun onClick(v: View?) {
-            if (v == rainbows){
-                albumName = "In Rainbows"
-                val i = Intent(this@MainActivity, AfficherChansons::class.java)
-                startActivity(i)
-            } else if (v == computer){
-                albumName = "OK Computer"
-                val i = Intent(this@MainActivity, AfficherChansons::class.java)
-                startActivity(i)
-            } else if (v == kid){
-                albumName = "Kid A"
-                val i = Intent(this@MainActivity, AfficherChansons::class.java)
-                startActivity(i)
-            }
-        }
-    }
+            val i = Intent(this@MainActivity, AfficherChansons::class.java)
 
-    fun getAlbumName():String{
-        return albumName
+            if (v == rainbows){
+                id = 1109714933
+            }
+            else if (v == computer){
+                id = 1097861387
+            }
+            else if (v == kid){
+                id = 1097862870
+            }
+            i.putExtra("albumId", id)
+            startActivity(i)
+        }
     }
 }
 
